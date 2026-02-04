@@ -722,6 +722,33 @@
       color: #cffafe;
     }
 
+    /* Book 14: Guns, Germs, and Steel - Warm amber/brown geography theme */
+    .book-14 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='18' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='1'/%3E%3Cpath d='M25 10 Q35 25 25 40 Q15 25 25 10' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #b45309 0%, #d97706 50%, #f59e0b 100%);
+      color: #fffbeb;
+    }
+
+    .book-14 .book-cover::before {
+      background: linear-gradient(to right, rgba(180, 83, 9, 0.2) 0%, transparent 50%);
+    }
+
+    .book-14 .book-cover .title-emboss {
+      color: #fffbeb;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .book-14 .book-spine {
+      background: linear-gradient(90deg, #b45309 0%, #d97706 40%, #f59e0b 60%, #d97706 100%);
+      color: #fffbeb;
+    }
+
+    .book-14 .book-back {
+      background: linear-gradient(165deg, #d97706 0%, #b45309 100%);
+      color: #fffbeb;
+    }
+
     /* Shared book structure */
     .book-cover {
       width: 100%;
@@ -959,6 +986,17 @@
     .book-13 .book-back .cover-edge-bottom,
     .book-13 .book-back .cover-edge-left {
       background: #155e75;
+    }
+
+    .book-14 .book-cover .cover-inner,
+    .book-14 .book-cover .cover-edge-top,
+    .book-14 .book-cover .cover-edge-bottom,
+    .book-14 .book-cover .cover-edge-right,
+    .book-14 .book-back .cover-inner,
+    .book-14 .book-back .cover-edge-top,
+    .book-14 .book-back .cover-edge-bottom,
+    .book-14 .book-back .cover-edge-left {
+      background: #b45309;
     }
 
     .book-cover h3 {
@@ -1801,6 +1839,45 @@
           <p class="author-name">Kees Dorst</p>
           <p class="description">Create New Thinking by Design - A methodology for tackling complex problems through reframing, drawing on design thinking principles.</p>
           <a href="https://padrian2s.github.io/Frame_Innovation/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 14: Guns, Germs, and Steel -->
+      <article class="book-card book-14">
+        <div class="book-container" data-book="14">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Guns, Germs,<br>and Steel</h3>
+              <div class="line"></div>
+              <span class="author">Jared Diamond</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Guns, Germs, and Steel — Jared Diamond</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Guns, Germs, and Steel</h4>
+          <p class="author-name">Jared Diamond</p>
+          <p class="description">The Fates of Human Societies - A Pulitzer Prize-winning exploration of how geography shaped human civilizations, examining the role of geography, agriculture, domesticated animals, and disease in determining world power dynamics.</p>
+          <a href="https://padrian2s.github.io/guns_germs_steel/" target="_blank" class="book-link">Read Book</a>
         </div>
         <p class="drag-hint">Hover or drag to explore</p>
       </article>
