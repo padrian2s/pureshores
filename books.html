@@ -784,6 +784,41 @@
       color: #fff7ed;
     }
 
+    /* Book 16: Model Thinking - Deep indigo/violet complexity science theme */
+    .book-16 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='3' fill='%23ffffff' fill-opacity='0.06'/%3E%3Ccircle cx='45' cy='45' r='3' fill='%23ffffff' fill-opacity='0.06'/%3E%3Cline x1='15' y1='15' x2='45' y2='45' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='1'/%3E%3Ccircle cx='45' cy='15' r='3' fill='%23ffffff' fill-opacity='0.06'/%3E%3Cline x1='15' y1='15' x2='45' y2='15' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='1'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #7c3aed 0%, #6d28d9 50%, #4c1d95 100%);
+      color: #ede9fe;
+    }
+
+    .book-16 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-16 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #ede9fe 25%, #c4b5fd 50%, #a78bfa 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-16 .book-spine {
+      background: linear-gradient(90deg, #4c1d95 0%, #6d28d9 40%, #7c3aed 60%, #6d28d9 100%);
+      color: #ede9fe;
+    }
+
+    .book-16 .book-back {
+      background: linear-gradient(165deg, #6d28d9 0%, #4c1d95 100%);
+      color: #ede9fe;
+    }
+
     /* Shared book structure */
     .book-cover {
       width: 100%;
@@ -1043,6 +1078,17 @@
     .book-15 .book-back .cover-edge-bottom,
     .book-15 .book-back .cover-edge-left {
       background: #9a3412;
+    }
+
+    .book-16 .book-cover .cover-inner,
+    .book-16 .book-cover .cover-edge-top,
+    .book-16 .book-cover .cover-edge-bottom,
+    .book-16 .book-cover .cover-edge-right,
+    .book-16 .book-back .cover-inner,
+    .book-16 .book-back .cover-edge-top,
+    .book-16 .book-back .cover-edge-bottom,
+    .book-16 .book-back .cover-edge-left {
+      background: #4c1d95;
     }
 
     .book-cover h3 {
@@ -1962,6 +2008,44 @@
           <p class="author-name">Tim Brown</p>
           <p class="description">How Design Thinking Transforms Organizations and Inspires Innovation - Drawing from his experience as CEO of IDEO, Brown explores how design thinking methodology can drive creative problem-solving across industries.</p>
           <a href="https://padrian2s.github.io/brown_tim/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <article class="book-card book-16">
+        <div class="book-container" data-book="16">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Model<br>Thinking</h3>
+              <div class="line"></div>
+              <span class="author">Scott E. Page</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Model Thinking — Scott E. Page</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Model Thinking</h4>
+          <p class="author-name">Scott E. Page</p>
+          <p class="description">Interactive simulators exploring how mathematical and computational models explain complex systems - from segregation and tipping points to network dynamics, game theory, and collective action problems.</p>
+          <a href="https://padrian2s.github.io/model_thinking/simulators/index.html" target="_blank" class="book-link">Read Book</a>
         </div>
         <p class="drag-hint">Hover or drag to explore</p>
       </article>
