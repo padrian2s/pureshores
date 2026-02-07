@@ -749,6 +749,41 @@
       color: #fffbeb;
     }
 
+    /* Book 15: Change by Design - Warm coral/orange creative theme */
+    .book-15 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L55 30 L30 55 L5 30 Z' fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #ea580c 0%, #c2410c 50%, #9a3412 100%);
+      color: #fff7ed;
+    }
+
+    .book-15 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-15 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #fff7ed 25%, #fed7aa 50%, #fdba74 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-15 .book-spine {
+      background: linear-gradient(90deg, #9a3412 0%, #c2410c 40%, #ea580c 60%, #c2410c 100%);
+      color: #fff7ed;
+    }
+
+    .book-15 .book-back {
+      background: linear-gradient(165deg, #c2410c 0%, #9a3412 100%);
+      color: #fff7ed;
+    }
+
     /* Shared book structure */
     .book-cover {
       width: 100%;
@@ -997,6 +1032,17 @@
     .book-14 .book-back .cover-edge-bottom,
     .book-14 .book-back .cover-edge-left {
       background: #b45309;
+    }
+
+    .book-15 .book-cover .cover-inner,
+    .book-15 .book-cover .cover-edge-top,
+    .book-15 .book-cover .cover-edge-bottom,
+    .book-15 .book-cover .cover-edge-right,
+    .book-15 .book-back .cover-inner,
+    .book-15 .book-back .cover-edge-top,
+    .book-15 .book-back .cover-edge-bottom,
+    .book-15 .book-back .cover-edge-left {
+      background: #9a3412;
     }
 
     .book-cover h3 {
@@ -1878,6 +1924,44 @@
           <p class="author-name">Jared Diamond</p>
           <p class="description">The Fates of Human Societies - A Pulitzer Prize-winning exploration of how geography shaped human civilizations, examining the role of geography, agriculture, domesticated animals, and disease in determining world power dynamics.</p>
           <a href="https://padrian2s.github.io/guns_germs_steel/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <article class="book-card book-15">
+        <div class="book-container" data-book="15">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Change<br>by Design</h3>
+              <div class="line"></div>
+              <span class="author">Tim Brown</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Change by Design — Tim Brown</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Change by Design</h4>
+          <p class="author-name">Tim Brown</p>
+          <p class="description">How Design Thinking Transforms Organizations and Inspires Innovation - Drawing from his experience as CEO of IDEO, Brown explores how design thinking methodology can drive creative problem-solving across industries.</p>
+          <a href="https://padrian2s.github.io/brown_tim/" target="_blank" class="book-link">Read Book</a>
         </div>
         <p class="drag-hint">Hover or drag to explore</p>
       </article>
