@@ -1091,6 +1091,51 @@
       background: #4c1d95;
     }
 
+    /* Book 17: How Google Works - Google blue/corporate tech theme */
+    .book-17 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='18' fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1'/%3E%3Cpath d='M10 10 L50 50 M50 10 L10 50' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='1'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #4285F4 0%, #3367d6 50%, #1a53c0 100%);
+      color: #e8f0fe;
+    }
+
+    .book-17 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-17 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #e8f0fe 25%, #a8c7fa 50%, #7cacf8 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-17 .book-spine {
+      background: linear-gradient(90deg, #1a53c0 0%, #3367d6 40%, #4285F4 60%, #3367d6 100%);
+      color: #e8f0fe;
+    }
+
+    .book-17 .book-back {
+      background: linear-gradient(165deg, #3367d6 0%, #1a53c0 100%);
+      color: #e8f0fe;
+    }
+
+    .book-17 .book-cover .cover-inner,
+    .book-17 .book-cover .cover-edge-top,
+    .book-17 .book-cover .cover-edge-bottom,
+    .book-17 .book-cover .cover-edge-right,
+    .book-17 .book-back .cover-inner,
+    .book-17 .book-back .cover-edge-top,
+    .book-17 .book-back .cover-edge-bottom,
+    .book-17 .book-back .cover-edge-left {
+      background: #1a53c0;
+    }
+
     .book-cover h3 {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.5rem;
@@ -2046,6 +2091,46 @@
           <p class="author-name">Scott E. Page</p>
           <p class="description">Interactive simulators exploring how mathematical and computational models explain complex systems - from segregation and tipping points to network dynamics, game theory, and collective action problems.</p>
           <a href="https://padrian2s.github.io/model_thinking/simulators/index.html" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 17: How Google Works -->
+      <article class="book-card book-17">
+        <div class="book-container" data-book="17">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">How Google<br>Works</h3>
+              <div class="line"></div>
+              <span class="author">Eric Schmidt &amp; Jonathan Rosenberg</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <p class="blurb">"A revealing look at how Google attracts smart creatives, builds culture, and drives innovation in the Internet Century."</p>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>How Google Works — Schmidt &amp; Rosenberg</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>How Google Works</h4>
+          <p class="author-name">Eric Schmidt &amp; Jonathan Rosenberg</p>
+          <p class="description">Interactive study guide exploring Google's approach to culture, strategy, talent, decisions, communications, and innovation — with page-by-page commentary and search across all chapters.</p>
+          <a href="https://padrian2s.github.io/google_book/" target="_blank" class="book-link">Read Book</a>
         </div>
         <p class="drag-hint">Hover or drag to explore</p>
       </article>
