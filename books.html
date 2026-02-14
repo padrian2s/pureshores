@@ -7,7 +7,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/css-doodle@0.40.5/css-doodle.min.js"></script>
   <style>
+    /* ── Folk Art: Human Vine ── */
+    .folk-vine {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 100vh;
+      z-index: 10;
+      pointer-events: none;
+      opacity: 1;
+      mask-image: linear-gradient(to bottom, transparent 1%, black 6%, black 94%, transparent 99%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 1%, black 6%, black 94%, transparent 99%);
+    }
+
+    .folk-vine svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes folk-pulse {
+      0%, 100% { opacity: var(--base-o, 0.5); }
+      50%      { opacity: calc(var(--base-o, 0.5) + 0.2); }
+    }
+
+    .folk-motif { animation: folk-pulse 7s ease-in-out infinite; }
+    .folk-motif:nth-child(even) { animation-delay: -3.5s; }
+
+    @media (max-width: 768px) {
+      .folk-vine { width: 55px; opacity: 0.5; }
+    }
     * {
       margin: 0;
       padding: 0;
@@ -1136,6 +1167,186 @@
       background: #1a53c0;
     }
 
+    /* Book 18: Dario Amodei Essays - Anthropic warm earth/terracotta */
+    .book-18 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 5 L35 20 L20 35 L5 20Z' fill='none' stroke='%23ffffff' stroke-opacity='0.06' stroke-width='0.8'/%3E%3Ccircle cx='20' cy='20' r='6' fill='none' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='0.8'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #b45309 0%, #92400e 50%, #78350f 100%);
+      color: #fef3c7;
+    }
+
+    .book-18 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-18 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #fef3c7 25%, #fcd34d 50%, #f59e0b 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-18 .book-spine {
+      background: linear-gradient(90deg, #78350f 0%, #92400e 40%, #b45309 60%, #92400e 100%);
+      color: #fef3c7;
+    }
+
+    .book-18 .book-back {
+      background: linear-gradient(165deg, #92400e 0%, #78350f 100%);
+      color: #fef3c7;
+    }
+
+    .book-18 .book-cover .cover-inner,
+    .book-18 .book-cover .cover-edge-top,
+    .book-18 .book-cover .cover-edge-bottom,
+    .book-18 .book-cover .cover-edge-right,
+    .book-18 .book-back .cover-inner,
+    .book-18 .book-back .cover-edge-top,
+    .book-18 .book-back .cover-edge-bottom,
+    .book-18 .book-back .cover-edge-left {
+      background: #78350f;
+    }
+
+    /* Book 19: AI Promise & Peril - Dark charcoal/silver futuristic */
+    .book-19 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='25' x2='50' y2='25' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='0.5'/%3E%3Cline x1='25' y1='0' x2='25' y2='50' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='0.5'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #374151 0%, #1f2937 50%, #111827 100%);
+      color: #f3f4f6;
+    }
+
+    .book-19 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%, rgba(0,0,0,0.2) 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-19 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 25%, #9ca3af 50%, #6b7280 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.4));
+    }
+
+    .book-19 .book-spine {
+      background: linear-gradient(90deg, #111827 0%, #1f2937 40%, #374151 60%, #1f2937 100%);
+      color: #f3f4f6;
+    }
+
+    .book-19 .book-back {
+      background: linear-gradient(165deg, #1f2937 0%, #111827 100%);
+      color: #d1d5db;
+    }
+
+    .book-19 .book-cover .cover-inner,
+    .book-19 .book-cover .cover-edge-top,
+    .book-19 .book-cover .cover-edge-bottom,
+    .book-19 .book-cover .cover-edge-right,
+    .book-19 .book-back .cover-inner,
+    .book-19 .book-back .cover-edge-top,
+    .book-19 .book-back .cover-edge-bottom,
+    .book-19 .book-back .cover-edge-left {
+      background: #111827;
+    }
+
+    /* Book 20: Understanding ML - Deep navy/electric blue academic */
+    .book-20 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='8' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='0.6'/%3E%3Ccircle cx='15' cy='15' r='3' fill='none' stroke='%23ffffff' stroke-opacity='0.04' stroke-width='0.6'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #1e40af 0%, #1e3a8a 50%, #172554 100%);
+      color: #dbeafe;
+    }
+
+    .book-20 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-20 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #dbeafe 25%, #93c5fd 50%, #60a5fa 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-20 .book-spine {
+      background: linear-gradient(90deg, #172554 0%, #1e3a8a 40%, #1e40af 60%, #1e3a8a 100%);
+      color: #dbeafe;
+    }
+
+    .book-20 .book-back {
+      background: linear-gradient(165deg, #1e3a8a 0%, #172554 100%);
+      color: #dbeafe;
+    }
+
+    .book-20 .book-cover .cover-inner,
+    .book-20 .book-cover .cover-edge-top,
+    .book-20 .book-cover .cover-edge-bottom,
+    .book-20 .book-cover .cover-edge-right,
+    .book-20 .book-back .cover-inner,
+    .book-20 .book-back .cover-edge-top,
+    .book-20 .book-back .cover-edge-bottom,
+    .book-20 .book-back .cover-edge-left {
+      background: #172554;
+    }
+
+    /* Book 21: Andrew Ng ML Study Guide - Stanford red/cardinal */
+    .book-21 .book-cover {
+      background:
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 20 Q20 5 35 20 Q20 35 5 20' fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='0.8'/%3E%3C/svg%3E"),
+        linear-gradient(165deg, #b91c1c 0%, #991b1b 50%, #7f1d1d 100%);
+      color: #fee2e2;
+    }
+
+    .book-21 .book-cover::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.15) 100%);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .book-21 .book-cover .title-emboss {
+      background: linear-gradient(180deg, #ffffff 0%, #fee2e2 25%, #fca5a5 50%, #f87171 75%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+    }
+
+    .book-21 .book-spine {
+      background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 40%, #b91c1c 60%, #991b1b 100%);
+      color: #fee2e2;
+    }
+
+    .book-21 .book-back {
+      background: linear-gradient(165deg, #991b1b 0%, #7f1d1d 100%);
+      color: #fee2e2;
+    }
+
+    .book-21 .book-cover .cover-inner,
+    .book-21 .book-cover .cover-edge-top,
+    .book-21 .book-cover .cover-edge-bottom,
+    .book-21 .book-cover .cover-edge-right,
+    .book-21 .book-back .cover-inner,
+    .book-21 .book-back .cover-edge-top,
+    .book-21 .book-back .cover-edge-bottom,
+    .book-21 .book-back .cover-edge-left {
+      background: #7f1d1d;
+    }
+
     .book-cover h3 {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.5rem;
@@ -1455,10 +1666,164 @@
       .book { width: 240px; height: 340px; }
       .book-cover h3 { font-size: 1.4rem; }
       .book-shadow { width: 220px; }
+
     }
   </style>
 </head>
 <body>
+  <div class="folk-vine">
+    <svg viewBox="0 0 90 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="warmglow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c17f59" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#c17f59" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- ── Lifeline: the thread of humanity ── -->
+      <path d="M45 0 C42 50, 52 80, 44 130 S32 190, 40 240 S54 290, 46 340 S30 400, 38 450 S56 510, 48 560 S32 620, 40 670 S52 730, 44 780 S34 840, 40 890 S48 940, 45 1000"
+        fill="none" stroke="#c17f59" stroke-width="0.8" stroke-opacity="0.3" stroke-linecap="round"/>
+
+      <!-- ═══ CAVE PAINTING: Person reaching upward (wonder/aspiration) ═══ -->
+      <g class="folk-motif" transform="translate(42, 60)" style="--base-o: 0.55">
+        <!-- head -->
+        <circle cx="0" cy="-14" r="3.5" fill="none" stroke="#c17f59" stroke-width="1" opacity="0.6"/>
+        <!-- body -->
+        <line x1="0" y1="-10" x2="0" y2="4" stroke="#c17f59" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
+        <!-- arms reaching up -->
+        <path d="M0 -6 C-4 -12, -8 -16, -10 -20" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.45" stroke-linecap="round"/>
+        <path d="M0 -6 C4 -12, 8 -16, 10 -20" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.45" stroke-linecap="round"/>
+        <!-- legs -->
+        <path d="M0 4 C-2 8, -5 12, -7 16" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+        <path d="M0 4 C2 8, 5 12, 7 16" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+      </g>
+
+      <!-- ═══ HAND PRINT (cave art, identity) ═══ -->
+      <g class="folk-motif" transform="translate(40, 160)" style="--base-o: 0.4">
+        <path d="M0 8 C-1 4, -3 1, -3 -2 C-3 -4, -2 -5, -1 -4 L-1 0
+                 M-1 0 C-2 -3, -3 -7, -3 -10 C-3 -12, -1 -12, 0 -10 L0 -2
+                 M0 -2 C0 -6, 0 -10, 1 -13 C2 -15, 3 -14, 3 -11 L2 -2
+                 M2 -2 C3 -5, 3 -9, 4 -11 C5 -13, 6 -12, 6 -9 L4 0
+                 M4 0 C5 -2, 7 -5, 8 -6 C9 -7, 10 -6, 9 -4 L5 3
+                 M5 3 C6 5, 4 8, 2 10 C0 12, -2 11, -2 9 L0 8"
+          fill="#c17f59" fill-opacity="0.15" stroke="#c17f59" stroke-width="0.6" stroke-opacity="0.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- ═══ PERSON READING (seated, book in lap) ═══ -->
+      <g class="folk-motif" transform="translate(44, 280)" style="--base-o: 0.5">
+        <!-- head -->
+        <circle cx="0" cy="-10" r="3" fill="none" stroke="#d4a574" stroke-width="0.9" opacity="0.55"/>
+        <!-- body leaning forward -->
+        <path d="M0 -7 C-1 -3, -1 0, 0 4" fill="none" stroke="#d4a574" stroke-width="0.9" opacity="0.45" stroke-linecap="round"/>
+        <!-- arms holding book -->
+        <path d="M0 -4 C-3 -2, -5 0, -6 2 L-2 2 L2 2 L6 2 C5 0, 3 -2, 0 -4" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.4" stroke-linecap="round"/>
+        <!-- book shape -->
+        <path d="M-5 1 L-5 4 L0 3.5 L5 4 L5 1" fill="#d4a574" fill-opacity="0.1" stroke="#d4a574" stroke-width="0.5" opacity="0.4"/>
+        <!-- seated legs -->
+        <path d="M0 4 C-3 6, -6 6, -8 8" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+        <path d="M0 4 C3 6, 6 6, 8 8" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+
+      <!-- ═══ EYE OF WISDOM ═══ -->
+      <g class="folk-motif" transform="translate(40, 390)" style="--base-o: 0.45">
+        <path d="M-10 0 C-5 -6, 5 -6, 10 0 C5 6, -5 6, -10 0Z" fill="#c17f59" fill-opacity="0.06" stroke="#c17f59" stroke-width="0.7" opacity="0.5"/>
+        <circle cx="0" cy="0" r="3" fill="none" stroke="#c17f59" stroke-width="0.6" opacity="0.45"/>
+        <circle cx="0" cy="0" r="1.2" fill="#c17f59" opacity="0.35"/>
+      </g>
+
+      <!-- ═══ TWO PEOPLE CONNECTED (community/sharing) ═══ -->
+      <g class="folk-motif" transform="translate(45, 490)" style="--base-o: 0.5">
+        <!-- person 1 -->
+        <circle cx="-8" cy="-8" r="2.5" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.5"/>
+        <line x1="-8" y1="-5" x2="-8" y2="3" stroke="#c17f59" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+        <path d="M-8 3 C-10 6, -11 9, -12 11" fill="none" stroke="#c17f59" stroke-width="0.6" opacity="0.3" stroke-linecap="round"/>
+        <path d="M-8 3 C-6 6, -5 9, -4 11" fill="none" stroke="#c17f59" stroke-width="0.6" opacity="0.3" stroke-linecap="round"/>
+        <!-- person 2 -->
+        <circle cx="8" cy="-8" r="2.5" fill="none" stroke="#d4a574" stroke-width="0.8" opacity="0.5"/>
+        <line x1="8" y1="-5" x2="8" y2="3" stroke="#d4a574" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+        <path d="M8 3 C6 6, 5 9, 4 11" fill="none" stroke="#d4a574" stroke-width="0.6" opacity="0.3" stroke-linecap="round"/>
+        <path d="M8 3 C10 6, 11 9, 12 11" fill="none" stroke="#d4a574" stroke-width="0.6" opacity="0.3" stroke-linecap="round"/>
+        <!-- hands meeting -->
+        <path d="M-8 -2 C-5 -1, -2 0, 0 0 C2 0, 5 -1, 8 -2" fill="none" stroke="#c9a55a" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+
+      <!-- ═══ SPIRAL (journey / cycle of life) ═══ -->
+      <g class="folk-motif" transform="translate(40, 600)" style="--base-o: 0.4">
+        <path d="M0 0 C1.5 0, 2.5 1.5, 2 3 C1.5 4.5, -0.5 5, -2 4 C-3.5 3, -4 0.5, -3 -1.5 C-2 -3.5, 1 -4.5, 3.5 -3.5 C5.5 -2.5, 6.5 1, 5.5 3.5 C4.5 6.5, 1 8, -2.5 7 C-5.5 6, -7 3, -6.5 -0.5 C-6 -4, -2 -7, 2 -7"
+          fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.45" stroke-linecap="round"/>
+      </g>
+
+      <!-- ═══ PERSON DANCING (joy / celebration) ═══ -->
+      <g class="folk-motif" transform="translate(42, 700)" style="--base-o: 0.45">
+        <circle cx="0" cy="-12" r="3" fill="none" stroke="#d4a574" stroke-width="0.9" opacity="0.5"/>
+        <path d="M0 -9 C0 -5, -1 -1, 0 3" fill="none" stroke="#d4a574" stroke-width="0.9" opacity="0.4" stroke-linecap="round"/>
+        <!-- arms outstretched joyfully -->
+        <path d="M0 -5 C-5 -9, -10 -12, -12 -14" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.4" stroke-linecap="round"/>
+        <path d="M0 -5 C5 -9, 10 -10, 13 -8" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.4" stroke-linecap="round"/>
+        <!-- legs in motion -->
+        <path d="M0 3 C-3 7, -7 10, -10 12" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+        <path d="M0 3 C4 5, 6 9, 5 13" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+      </g>
+
+      <!-- ═══ OPEN BOOK / WINGS OF KNOWLEDGE ═══ -->
+      <g class="folk-motif" transform="translate(44, 810)" style="--base-o: 0.45">
+        <path d="M0 4 C-3 2, -7 -1, -12 -3 C-9 0, -5 2, 0 4" fill="#c17f59" fill-opacity="0.08" stroke="#c17f59" stroke-width="0.6" opacity="0.4"/>
+        <path d="M0 4 C3 2, 7 -1, 12 -3 C9 0, 5 2, 0 4" fill="#c17f59" fill-opacity="0.08" stroke="#c17f59" stroke-width="0.6" opacity="0.4"/>
+        <line x1="0" y1="4" x2="0" y2="-1" stroke="#c17f59" stroke-width="0.5" opacity="0.35"/>
+        <!-- small lines as text -->
+        <line x1="-8" y1="-1" x2="-3" y2="1" stroke="#c17f59" stroke-width="0.3" opacity="0.2"/>
+        <line x1="-7" y1="0.5" x2="-3" y2="2" stroke="#c17f59" stroke-width="0.3" opacity="0.2"/>
+        <line x1="3" y1="1" x2="8" y2="-1" stroke="#c17f59" stroke-width="0.3" opacity="0.2"/>
+        <line x1="3" y1="2" x2="7" y2="0.5" stroke="#c17f59" stroke-width="0.3" opacity="0.2"/>
+      </g>
+
+      <!-- ═══ FAMILY / ANCESTORS (3 figures, decreasing size) ═══ -->
+      <g class="folk-motif" transform="translate(42, 920)" style="--base-o: 0.4">
+        <!-- elder -->
+        <circle cx="-10" cy="-5" r="2.5" fill="none" stroke="#c17f59" stroke-width="0.7" opacity="0.4"/>
+        <line x1="-10" y1="-2.5" x2="-10" y2="5" stroke="#c17f59" stroke-width="0.7" opacity="0.35" stroke-linecap="round"/>
+        <!-- parent -->
+        <circle cx="0" cy="-7" r="3" fill="none" stroke="#c17f59" stroke-width="0.8" opacity="0.5"/>
+        <line x1="0" y1="-4" x2="0" y2="5" stroke="#c17f59" stroke-width="0.8" opacity="0.4" stroke-linecap="round"/>
+        <!-- child -->
+        <circle cx="10" cy="-3" r="2" fill="none" stroke="#d4a574" stroke-width="0.7" opacity="0.45"/>
+        <line x1="10" y1="-1" x2="10" y2="5" stroke="#d4a574" stroke-width="0.6" opacity="0.35" stroke-linecap="round"/>
+        <!-- connecting line between them (lineage) -->
+        <path d="M-10 5 C-5 8, 5 8, 10 5" fill="none" stroke="#c9a55a" stroke-width="0.5" opacity="0.25" stroke-dasharray="2 2"/>
+      </g>
+
+      <!-- ═══ Scattered human dots (footprints of ancestors) ═══ -->
+      <g opacity="0.3">
+        <circle cx="30" cy="130" r="1" fill="#c17f59"/>
+        <circle cx="50" cy="135" r="0.7" fill="#c17f59"/>
+        <circle cx="35" cy="140" r="1.2" fill="#d4a574"/>
+        <circle cx="52" cy="125" r="0.6" fill="#c17f59"/>
+      </g>
+      <g opacity="0.25">
+        <circle cx="32" cy="350" r="0.8" fill="#d4a574"/>
+        <circle cx="55" cy="355" r="1" fill="#c17f59"/>
+        <circle cx="38" cy="360" r="0.6" fill="#d4a574"/>
+      </g>
+      <g opacity="0.2">
+        <circle cx="50" cy="550" r="0.9" fill="#c17f59"/>
+        <circle cx="30" cy="555" r="0.7" fill="#d4a574"/>
+        <circle cx="55" cy="545" r="1.1" fill="#c17f59"/>
+      </g>
+      <g opacity="0.25">
+        <circle cx="35" cy="760" r="0.8" fill="#d4a574"/>
+        <circle cx="52" cy="755" r="0.7" fill="#c17f59"/>
+        <circle cx="38" cy="768" r="1" fill="#c17f59"/>
+      </g>
+
+      <!-- ═══ Warm ambient glow behind key motifs ═══ -->
+      <circle cx="42" cy="60" r="22" fill="url(#warmglow)" opacity="0.35"/>
+      <circle cx="44" cy="280" r="18" fill="url(#warmglow)" opacity="0.25"/>
+      <circle cx="45" cy="490" r="20" fill="url(#warmglow)" opacity="0.25"/>
+      <circle cx="42" cy="700" r="18" fill="url(#warmglow)" opacity="0.2"/>
+      <circle cx="42" cy="920" r="20" fill="url(#warmglow)" opacity="0.2"/>
+    </svg>
+  </div>
+
   <header>
     <a href="index.html" class="logo">Pure<span>Shores</span></a>
     <a href="index.html" class="back-link">
@@ -2131,6 +2496,166 @@
           <p class="author-name">Eric Schmidt &amp; Jonathan Rosenberg</p>
           <p class="description">Interactive study guide exploring Google's approach to culture, strategy, talent, decisions, communications, and innovation — with page-by-page commentary and search across all chapters.</p>
           <a href="https://padrian2s.github.io/google_book/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 18: Dario Amodei Essays -->
+      <article class="book-card book-18">
+        <div class="book-container" data-book="18">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Dario Amodei<br>Essays</h3>
+              <div class="line"></div>
+              <span class="author">Dario Amodei</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <p class="blurb">"Exploring how AI could transform the world for the better — and the layered defenses needed to navigate its risks."</p>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Dario Amodei Essays — Dario Amodei</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Dario Amodei Essays</h4>
+          <p class="author-name">Dario Amodei</p>
+          <p class="description">Interactive study guide covering "Machines of Loving Grace" and "The Adolescence of Technology" — exploring AI's potential to transform biology, neuroscience, and governance, alongside the risks of autonomy failures and power concentration.</p>
+          <a href="https://padrian2s.github.io/dario-amodei-essays/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 19: AI Promise & Peril -->
+      <article class="book-card book-19">
+        <div class="book-container" data-book="19">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">AI: Promise<br>&amp; Peril</h3>
+              <div class="line"></div>
+              <span class="author">Dario Amodei</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <p class="blurb">"25 topics distilled from conversations with Anthropic's CEO on AI's benefits, risks, and humanity's path forward."</p>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>AI: Promise &amp; Peril — Dario Amodei</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>AI: Promise &amp; Peril</h4>
+          <p class="author-name">Dario Amodei</p>
+          <p class="description">Study guide distilling 25 topics from conversations with Anthropic's CEO — covering AI in medicine, job displacement, geopolitical competition, alignment challenges, and existential risks.</p>
+          <a href="https://padrian2s.github.io/claude_code_get_us_irrelevance/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 20: Understanding Machine Learning -->
+      <article class="book-card book-20">
+        <div class="book-container" data-book="20">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Understanding<br>Machine<br>Learning</h3>
+              <div class="line"></div>
+              <span class="author">Shalev-Shwartz &amp; Ben-David</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <p class="blurb">"From theory to algorithms — a comprehensive journey through PAC learning, SVMs, neural networks, and advanced complexity bounds."</p>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Understanding ML — Shalev-Shwartz &amp; Ben-David</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Understanding Machine Learning</h4>
+          <p class="author-name">Shai Shalev-Shwartz &amp; Shai Ben-David</p>
+          <p class="description">Interactive study guide covering ML from foundational theory through practical algorithms — PAC learning, VC-dimension, SVMs, neural networks, and online learning with visual simulators.</p>
+          <a href="https://padrian2s.github.io/understanding-ml/" target="_blank" class="book-link">Read Book</a>
+        </div>
+        <p class="drag-hint">Hover or drag to explore</p>
+      </article>
+
+      <!-- Book 21: Andrew Ng ML Study Guide -->
+      <article class="book-card book-21">
+        <div class="book-container" data-book="21">
+          <div class="book">
+            <div class="book-cover">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-right"></div>
+              <div class="cover-edge-bottom"></div>
+              <h3 class="title-emboss">Machine<br>Learning</h3>
+              <div class="line"></div>
+              <span class="author">Andrew Ng</span>
+            </div>
+            <div class="book-back">
+              <div class="cover-inner"></div>
+              <div class="cover-edge-left"></div>
+              <div class="cover-edge-top"></div>
+              <div class="cover-edge-bottom"></div>
+              <div class="spine-edge"></div>
+              <p class="blurb">"Stanford's CS229 brought to life — interactive study guide with visual simulators for regression, neural networks, and more."</p>
+              <div class="barcode"></div>
+            </div>
+            <div class="book-spine">
+              <span>Machine Learning — Andrew Ng</span>
+            </div>
+            <div class="book-pages"></div>
+            <div class="book-top"></div>
+            <div class="book-bottom"></div>
+          </div>
+        </div>
+        <div class="book-shadow"></div>
+        <div class="book-info">
+          <h4>Machine Learning</h4>
+          <p class="author-name">Andrew Ng</p>
+          <p class="description">Interactive study guide for Stanford's CS229 — covering linear regression, neural networks, SVMs, clustering, and dimensionality reduction with hands-on visual simulators.</p>
+          <a href="https://padrian2s.github.io/andrew-ng-ml-study-guide/" target="_blank" class="book-link">Read Book</a>
         </div>
         <p class="drag-hint">Hover or drag to explore</p>
       </article>
