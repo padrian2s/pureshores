@@ -221,76 +221,59 @@
             pointer-events: auto;
         }
 
-        .nav-content,
-        .alphabet-rail {
+        .nav-links {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 100px 20px;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.4s ease 0.1s, visibility 0.4s ease 0.1s;
+            z-index: 1001;
             pointer-events: none;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .nav-container.open .nav-content,
-        .nav-container.open .alphabet-rail {
+        .nav-container.open .nav-links {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
         }
 
-        /* Alphabet navigation */
-        .nav-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 40px;
-            bottom: 0;
-            overflow-y: auto;
-            padding: 90px 20px 40px 20px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        .nav-content::-webkit-scrollbar {
-            display: none;
-        }
-
-        .letter-group {
-            margin-bottom: 10px;
-        }
-
-        .letter-header {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: rgba(126, 200, 227, 0.9);
-            padding: 12px 20px 8px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .letter-group .app-link {
-            display: block;
-            font-size: 1.1rem;
+        .nav-links a {
+            font-size: 1.2rem;
             font-weight: 400;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            position: relative;
             padding: 12px 30px;
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 8px;
+            min-width: 280px;
+            text-align: center;
         }
 
-        .letter-group .app-link:hover {
+        .nav-links a:hover {
             background: rgba(126, 200, 227, 0.2);
             border-color: rgba(126, 200, 227, 0.4);
             color: rgba(126, 200, 227, 1);
             text-shadow: 0 0 20px rgba(126, 200, 227, 0.6);
-            transform: translateX(4px);
+            transform: translateY(-2px);
         }
 
-        .letter-group .app-link .link-dot {
+        .nav-links a .link-dot {
             display: inline-block;
             width: 6px;
             height: 6px;
@@ -301,64 +284,9 @@
             transition: all 0.3s ease;
         }
 
-        .letter-group .app-link:hover .link-dot {
+        .nav-links a:hover .link-dot {
             background: rgba(126, 200, 227, 1);
             box-shadow: 0 0 12px rgba(126, 200, 227, 1);
-        }
-
-        /* Alphabet rail */
-        .alphabet-rail {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 1002;
-            padding: 10px 0;
-            user-select: none;
-        }
-
-        .alphabet-rail .letter {
-            font-size: 0.6rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.4);
-            padding: 2px 0;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            position: relative;
-            letter-spacing: 0;
-        }
-
-        .alphabet-rail .letter:hover {
-            color: rgba(126, 200, 227, 1);
-        }
-
-        .alphabet-rail .letter.has-apps {
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-        }
-
-        .alphabet-rail .letter.active {
-            color: white;
-            background: rgba(126, 200, 227, 0.9);
-            font-weight: 700;
-            font-size: 0.7rem;
-            box-shadow: 0 0 15px rgba(126, 200, 227, 0.5);
-        }
-
-        .alphabet-rail .letter.disabled {
-            color: rgba(255, 255, 255, 0.15);
-            pointer-events: none;
         }
 
         @media (max-width: 768px) {
@@ -389,38 +317,31 @@
                 background: white;
             }
 
-
-            .nav-content {
-                right: 32px;
-                padding: 90px 10px 40px 10px;
+            .nav-links {
+                gap: 16px;
+                padding: 90px 20px 40px 20px;
+                justify-content: flex-start;
             }
 
-            .alphabet-rail {
-                width: 32px;
-            }
-
-            .alphabet-rail .letter {
-                font-size: 0.55rem;
-                width: 24px;
-                height: 24px;
-            }
-
-            .alphabet-rail .letter.active {
-                font-size: 0.6rem;
-            }
-
-            .letter-group .app-link {
-                font-size: 1.2rem !important;
-                padding: 16px 20px;
+            .nav-links a {
+                font-size: 1.3rem !important;
+                padding: 18px 24px;
+                letter-spacing: 0.1em;
                 min-width: 100%;
                 background: rgba(255, 255, 255, 0.08);
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 font-weight: 500;
             }
 
-            .letter-group .app-link:active {
+            .nav-links a:active {
                 background: rgba(126, 200, 227, 0.3);
                 transform: scale(0.96);
+            }
+
+            .nav-links a .link-dot {
+                width: 8px;
+                height: 8px;
+                margin-right: 14px;
             }
 
             .title-container {
@@ -471,50 +392,22 @@
             Menu
         </button>
         <div class="nav-overlay"></div>
-        <div class="nav-content" id="navContent">
-            <div class="letter-group" data-letter="A">
-                <div class="letter-header">A</div>
-                <a href="https://padrian2s.github.io/air-fryer/" target="_blank" class="app-link"><span class="link-dot"></span>Air Fryer</a>
-                <a href="https://padrian2s.github.io/muscle/" target="_blank" class="app-link"><span class="link-dot"></span>Atlasul Muscular</a>
-            </div>
-            <div class="letter-group" data-letter="B">
-                <div class="letter-header">B</div>
-                <a href="https://padrian2s.github.io/400/" target="_blank" class="app-link"><span class="link-dot"></span>Book 400</a>
-                <a href="books.html" class="app-link"><span class="link-dot"></span>Books</a>
-            </div>
-            <div class="letter-group" data-letter="C">
-                <div class="letter-header">C</div>
-                <a href="conversation-claude-adrian.html" class="app-link"><span class="link-dot"></span>Conversație</a>
-            </div>
-            <div class="letter-group" data-letter="D">
-                <div class="letter-header">D</div>
-                <a href="https://mela-today.myddns.me:8081/dosar_medical/" target="_blank" class="app-link"><span class="link-dot"></span>Dosar Medical</a>
-                <a href="https://padrian2s.github.io/dr_ekberg/" target="_blank" class="app-link"><span class="link-dot"></span>Dr Ekberg</a>
-            </div>
-            <div class="letter-group" data-letter="F">
-                <div class="letter-header">F</div>
-                <a href="https://padrian2s.github.io/filo.studii/" target="_blank" class="app-link"><span class="link-dot"></span>Filo.Studii</a>
-            </div>
-            <div class="letter-group" data-letter="I">
-                <div class="letter-header">I</div>
-                <a href="https://padrian2s.github.io/info-graphics/" target="_blank" class="app-link"><span class="link-dot"></span>Info Graphics</a>
-            </div>
-            <div class="letter-group" data-letter="M">
-                <div class="letter-header">M</div>
-                <a href="https://mela-today.myddns.me:8081/mela/" target="_blank" class="app-link"><span class="link-dot"></span>Mela</a>
-                <a href="https://mela-today.myddns.me:8081/mycardinal/" target="_blank" class="app-link"><span class="link-dot"></span>MyCardinal</a>
-            </div>
-            <div class="letter-group" data-letter="P">
-                <div class="letter-header">P</div>
-                <a href="https://padrian2s.github.io/personal_infographics/" target="_blank" class="app-link"><span class="link-dot"></span>Personal Infographics</a>
-            </div>
-            <div class="letter-group" data-letter="S">
-                <div class="letter-header">S</div>
-                <a href="https://padrian2s.github.io/scan_pages/" target="_blank" class="app-link"><span class="link-dot"></span>Scan Pages</a>
-                <a href="https://nstarx.github.io/claude_internals/" target="_blank" class="app-link"><span class="link-dot"></span>SCM</a>
-            </div>
-        </div>
-        <div class="alphabet-rail" id="alphabetRail"></div>
+        <nav class="nav-links">
+            <a href="conversation-claude-adrian.html"><span class="link-dot"></span>Conversație</a>
+            <a href="books.html"><span class="link-dot"></span>Books</a>
+            <a href="https://nstarx.github.io/claude_internals/" target="_blank"><span class="link-dot"></span>SCM</a>
+            <a href="https://padrian2s.github.io/filo.studii/" target="_blank"><span class="link-dot"></span>Filo.Studii</a>
+            <a href="https://padrian2s.github.io/scan_pages/" target="_blank"><span class="link-dot"></span>Scan Pages</a>
+            <a href="https://padrian2s.github.io/info-graphics/" target="_blank"><span class="link-dot"></span>Info Graphics</a>
+            <a href="https://padrian2s.github.io/dr_ekberg/" target="_blank"><span class="link-dot"></span>Dr Ekberg</a>
+            <a href="https://padrian2s.github.io/400/" target="_blank"><span class="link-dot"></span>Book 400</a>
+            <a href="https://padrian2s.github.io/personal_infographics/" target="_blank"><span class="link-dot"></span>Personal Infographics</a>
+            <a href="https://mela-today.myddns.me:8081/mycardinal/" target="_blank"><span class="link-dot"></span>MyCardinal</a>
+            <a href="https://padrian2s.github.io/muscle/" target="_blank"><span class="link-dot"></span>Atlasul Muscular</a>
+            <a href="https://padrian2s.github.io/air-fryer/" target="_blank"><span class="link-dot"></span>Air Fryer</a>
+            <a href="https://mela-today.myddns.me:8081/mela/" target="_blank"><span class="link-dot"></span>Mela</a>
+            <a href="https://mela-today.myddns.me:8081/dosar_medical/" target="_blank"><span class="link-dot"></span>Dosar Medical</a>
+        </nav>
     </div>
 </div>
 
@@ -688,8 +581,7 @@
     const navToggle = document.getElementById('navToggle');
     const navContainer = document.getElementById('navContainer');
     const navOverlay = navContainer.querySelector('.nav-overlay');
-    const navContent = document.getElementById('navContent');
-    const alphabetRail = document.getElementById('alphabetRail');
+    const navLinks = navContainer.querySelectorAll('.nav-links a');
 
     navToggle.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -701,98 +593,12 @@
         navContainer.classList.remove('open');
     });
 
-    // Close menu when clicking any app link
-    navContent.querySelectorAll('.app-link').forEach(link => {
+    // Close menu when clicking any link
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navContainer.classList.remove('open');
         });
     });
-
-    // Build alphabet rail
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const letterGroups = navContent.querySelectorAll('.letter-group');
-    const activeLetters = new Set();
-    letterGroups.forEach(g => activeLetters.add(g.dataset.letter));
-
-    alphabet.split('').forEach(letter => {
-        const el = document.createElement('div');
-        el.className = 'letter';
-        el.textContent = letter;
-        if (activeLetters.has(letter)) {
-            el.classList.add('has-apps');
-        } else {
-            el.classList.add('disabled');
-        }
-        el.dataset.letter = letter;
-        el.addEventListener('click', () => {
-            const group = navContent.querySelector(`.letter-group[data-letter="${letter}"]`);
-            if (group) {
-                group.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-        alphabetRail.appendChild(el);
-    });
-
-    // Scroll sync: update active letter in rail based on scroll position
-    function updateActiveLetter() {
-        const scrollTop = navContent.scrollTop;
-        const contentTop = navContent.getBoundingClientRect().top;
-        let currentLetter = null;
-
-        letterGroups.forEach(group => {
-            const rect = group.getBoundingClientRect();
-            const groupTop = rect.top - contentTop;
-            if (groupTop <= 80) {
-                currentLetter = group.dataset.letter;
-            }
-        });
-
-        if (!currentLetter && letterGroups.length > 0) {
-            currentLetter = letterGroups[0].dataset.letter;
-        }
-
-        alphabetRail.querySelectorAll('.letter').forEach(el => {
-            el.classList.toggle('active', el.dataset.letter === currentLetter);
-        });
-    }
-
-    navContent.addEventListener('scroll', updateActiveLetter);
-
-    // Set initial active letter when menu opens
-    const observer = new MutationObserver(() => {
-        if (navContainer.classList.contains('open')) {
-            requestAnimationFrame(updateActiveLetter);
-        }
-    });
-    observer.observe(navContainer, { attributes: true, attributeFilter: ['class'] });
-
-    // Touch drag on alphabet rail for mobile
-    function getLetterFromTouch(e) {
-        const touch = e.touches[0];
-        const el = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (el && el.classList.contains('letter') && el.classList.contains('has-apps')) {
-            return el.dataset.letter;
-        }
-        return null;
-    }
-
-    alphabetRail.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        const letter = getLetterFromTouch(e);
-        if (letter) {
-            const group = navContent.querySelector(`.letter-group[data-letter="${letter}"]`);
-            if (group) group.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-    }, { passive: false });
-
-    alphabetRail.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        const letter = getLetterFromTouch(e);
-        if (letter) {
-            const group = navContent.querySelector(`.letter-group[data-letter="${letter}"]`);
-            if (group) group.scrollIntoView({ behavior: 'auto', block: 'start' });
-        }
-    }, { passive: false });
 
 </script>
 </body>
